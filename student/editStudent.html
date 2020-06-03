@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleCode</title>
+    <link rel="icon" href="/images/logo.png" sizes="32x32">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+   </head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top rounded mt-3"
+            style="box-shadow: 10px 8px 9px 0px rgb(39, 41, 46);">
+            <div class="mx-auto order-0">
+                <a href="/index.html" class="navbar-brand mx-auto">
+                    <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+                    <b><i>PeopleCode</i></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"
+                    aria-label="toggle here" aria-expanded="false" aria-controls="#navbar1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Course" class="nav-link dropdown-toggle" id="dropdownCourse"
+                            data-toggle="dropdown">Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/course/addCourse.html" class="dropdown-item">Add Course</a>
+                            <a href="/course/editCourse.html" class="dropdown-item">Edit Course</a>
+                            <a href="/course/updateCourse.html" class="dropdown-item">Update Course</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Trainer" class="nav-link dropdown-toggle" id="dropdownTrainer"
+                            data-toggle="dropdown">Trainer</a>
+                        <div class="dropdown-menu">
+                            <a href="/trainer/addTrainer.html" class="dropdown-item">Add Trainer</a>
+                            <a href="/trainer/editTrainer.html" class="dropdown-item">Edit Trainer</a>
+                            <a href="/trainer/updateTrainer.html" class="dropdown-item">Update Trainer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#Student" class="nav-link dropdown-toggle" id="dropdownStudent"
+                            data-toggle="dropdown">Student</a>
+                        <div class="dropdown-menu">
+                            <a href="/student/addStudent.html" class="dropdown-item">Add Student</a>
+                            <a href="/student/editStudent.html" class="dropdown-item active">Edit Student</a>
+                            <a href="/student/updateStudent.html" class="dropdown-item">Update Student</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Assignment" class="nav-link dropdown-toggle" id="dropdownAssignment"
+                            data-toggle="dropdown">Assignment</a>
+                        <div class="dropdown-menu">
+                            <a href="/assignment/addAssignment.html" class="dropdown-item">Add Assignment</a>
+                            <a href="/assignment/editAssignment.html" class="dropdown-item">Edit Assignment</a>
+                            <a href="/assignment/updateAssignment.html" class="dropdown-item">Update Assignment</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#PerCourse" class="nav-link dropdown-toggle" id="dropdownPerCourse"
+                            data-toggle="dropdown">Per Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/perCourse/StudentsPerCourse.html" class="dropdown-item">Students Per
+                                Course</a>
+                            <a href="/perCourse/TrainersPerCourse.html" class="dropdown-item">Trainers Per Course</a>
+                            <a href="/perCourse/AssignmentsPerCourse.html" class="dropdown-item">Assignments Per
+                                Course</a>
+                            <a href="/perCourse/assignmentsPerStudentPerCourse.html"
+                                class="dropdown-item">Assignments Per Student Per Course</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <form>
+                        <div class="input-group mt-1 ml-auto">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-dark">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <div class="row my-3">
+            <div class="col-5 d-none d-lg-block">
+                <div class="big-box">
+                    <img class="rounded" src="/images/student.jpg" width="500" height="300" alt="puppy">
+                </div>
+            </div>
+            <div class="col-12 bg-light col-lg-6 offset-lg-1 pt-2">
+                <form>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <h3 class="display-5 text-center"> <i>Edit Student</i></h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>First Name: </i></span>
+                                </div>
+                                <input type="text" class="form-control" id="stdFName" name="stdFName"
+                                    pattern="[A-Za-z]{3,50}" title="Latin letters only (3-50 letters)"
+                                    placeholder="Enter first name" value="John" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Last Name: </i></span>
+                                </div>                               
+                                <input type="text" class="form-control" id="stdLName" name="stdLName"
+                                    pattern="[A-Za-z]{3,50}" title="Latin letters only (3-50 letters)"
+                                    placeholder=" last name" value="Pappas" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Date of Birth: </i></span>
+                                </div>
+                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth"
+                                    min="1940-01-01" max="2003-01-01" value="1986-10-12" title="Adults only" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Tuition Fees: </i></span>
+                                </div>
+                                <input type="number" class="form-control" id="tuitionFees" name="tuitionFees" step="100"
+                                    min="0" value="2150" required />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">&euro;</span>
+                                      </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <button type="submit" id="submit" class="btn btn-lg btn-block btn-primary mb-1"
+                                onclick="addStudentToTable();">Save</button>
+                        </div>
+                        <div class="col mini-box">
+                            <button type="reset" class="btn btn-lg btn-block btn-primary mb-1">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-3 bg-light">
+            <h3 class="display-5 text-center"><i>Here are all of our Students: </i></h3>
+        </div>
+        <div class="row mt-1">
+
+            <table class="table table-striped" id="studentTable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Date of Birth</th>
+                        <th scope="col">Tuition Fees &euro;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">1</td>
+                        <td>Argiris</td>
+                        <td>Glampedakis</td>
+                        <td>1990-07-12</td>
+                        <td>2250</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td>Nikolaos</td>
+                        <td>Sfiridakis</td>
+                        <td>1988-10-19</td>
+                        <td>2000</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">3</td>
+                        <td>Eleftheria</td>
+                        <td>Palaiologoy</td>
+                        <td>1992-09-08</td>
+                        <td>2300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <nav class="navbar navbar-dark bg-dark p-2 rounded">
+            <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="brand icon" /> &copy; <i>Copyright PeopleCode</i></a>
+
+        </nav>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleCode</title>
+    <link rel="icon" href="/images/logo.png" sizes="32x32">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top rounded mt-3"
+            style="box-shadow: 10px 8px 9px 0px rgb(39, 41, 46);">
+            <div class="mx-auto order-0">
+                <a href="/index.html" class="navbar-brand mx-auto">
+                    <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+                    <b><i>PeopleCode</i></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"
+                    aria-label="toggle here" aria-expanded="false" aria-controls="#navbar1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Course" class="nav-link dropdown-toggle" id="dropdownCourse"
+                            data-toggle="dropdown">Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/course/addCourse.html" class="dropdown-item">Add Course</a>
+                            <a href="/course/editCourse.html" class="dropdown-item">Edit Course</a>
+                            <a href="/course/updateCourse.html" class="dropdown-item">Update Course</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Trainer" class="nav-link dropdown-toggle" id="dropdownTrainer"
+                            data-toggle="dropdown">Trainer</a>
+                        <div class="dropdown-menu">
+                            <a href="/trainer/addTrainer.html" class="dropdown-item">Add Trainer</a>
+                            <a href="/trainer/editTrainer.html" class="dropdown-item">Edit Trainer</a>
+                            <a href="/trainer/updateTrainer.html" class="dropdown-item">Update Trainer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Student" class="nav-link dropdown-toggle" id="dropdownStudent"
+                            data-toggle="dropdown">Student</a>
+                        <div class="dropdown-menu">
+                            <a href="/student/addStudent.html" class="dropdown-item">Add Student</a>
+                            <a href="/student/editStudent.html" class="dropdown-item">Edit Student</a>
+                            <a href="/student/updateStudent.html" class="dropdown-item">Update Student</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Assignment" class="nav-link dropdown-toggle" id="dropdownAssignment"
+                            data-toggle="dropdown">Assignment</a>
+                        <div class="dropdown-menu">
+                            <a href="/assignment/addAssignment.html" class="dropdown-item">Add Assignment</a>
+                            <a href="/assignment/editAssignment.html" class="dropdown-item">Edit Assignment</a>
+                            <a href="/assignment/updateAssignment.html" class="dropdown-item">Update Assignment</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#PerCourse" class="nav-link dropdown-toggle" id="dropdownPerCourse"
+                            data-toggle="dropdown">Per Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/perCourse/StudentsPerCourse.html" class="dropdown-item">Students Per
+                                Course</a>
+                            <a href="/perCourse/TrainersPerCourse.html" class="dropdown-item">Trainers Per Course</a>
+                            <a href="/perCourse/AssignmentsPerCourse.html" class="dropdown-item">Assignments Per
+                                Course</a>
+                            <a href="/perCourse/assignmentsPerStudentPerCourse.html"
+                                class="dropdown-item active">Assignments Per Student Per Course</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <form>
+                        <div class="input-group mt-1 ml-auto">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-dark">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <div class="row mt3">
+            <div class="col-12 bg-light col-lg-7 pt-2">
+                <table class="table table-striped" id="studentsTable">
+                    <thead>
+                        <tr>
+                            <h4 class="display-5">Select a Student and then...</h4>
+                        </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col">Tuition Fees &euro;</th>
+                            <th scope="col">Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Argiris</td>
+                            <td>Glampedakis</td>
+                            <td>1990-07-12</td>
+                            <td>2250</td>
+                            <td>
+                                <label class="btn btn-sm btn-outline-dark">
+                                    <input type="radio" name="selectRadio" value="0">
+                                </label>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td>Argiris</td>
+                            <td>Glampedakis</td>
+                            <td>1990-07-12</td>
+                            <td>2250</td>
+                            <td>
+                                <label class="btn btn-sm btn-outline-dark">
+                                    <input type="radio" name="selectRadio" value="1">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">3</td>
+                            <td>Argiris</td>
+                            <td>Glampedakis</td>
+                            <td>1990-07-12</td>
+                            <td>2250</td>
+                            <td>
+                                <label class="btn btn-sm btn-outline-dark">
+                                    <input type="radio" name="selectRadio" value="2">
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-5 d-none d-lg-block">
+
+                <img class="rounded" src="/images/studentAsgnPerStdtPerCourse.jpg" width="450" height="350" alt="puppy">
+
+            </div>
+
+        </div>
+        <div class="row my-3">
+            <div class="col-4 d-none d-lg-block">
+                <div class="big-box">
+                    <img class="rounded" src="/images/assignmentsPerCourse.jpg" width="450" height="350" alt="puppy">
+                </div>
+            </div>
+            <div class="col-12 bg-light col-lg-7 offset-lg-1 pt-2">
+                <div class="row mt-2">
+                    <div class="col mini-box">
+                        <table class="table table-striped" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <h4 class="display-5">...select a Course to add, edit or update Assignments!</h4>
+                                </tr>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Stream</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Select</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td>CB10</td>
+                                    <td>Java</td>
+                                    <td>Part-time</td>
+                                    <td>2020-02-17</td>
+                                    <td>2020-09-15</td>
+                                    <td>
+                                        <label class="btn btn-sm btn-outline-dark">
+                                            <input type="radio" name="selectRadio" value="0">
+                                        </label>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td scope="row">2</td>
+                                    <td>CB10</td>
+                                    <td>C#</td>
+                                    <td>Full-time</td>
+                                    <td>2020-02-22</td>
+                                    <td>2020-05-17</td>
+                                    <td>
+                                        <label class="btn btn-sm btn-outline-dark">
+                                            <input type="radio" name="selectRadio" value="1">
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">3</td>
+                                    <td>CB9</td>
+                                    <td>Java</td>
+                                    <td>Part-time</td>
+                                    <td>2019-10-11</td>
+                                    <td>2020-05-04</td>
+                                    <td>
+                                        <label class="btn btn-sm btn-outline-dark">
+                                            <input type="radio" name="selectRadio" value="2">
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col mini-box">
+                        <button type="button" class="btn btn-success  mb-1" data-toggle="modal"
+                            data-target="#addModalLong" id="add">Add+</button>
+                        <div class="modal fade" id="addModalLong" tabindex="-1" role="dialog"
+                            aria-labelledby="addModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addModalLongTitle">List of available Assignments.
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-striped" id="addTable">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Oral Mark</th>
+                                                    <th scope="col">Total Mark</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Subbmission Date</th>
+                                                    <th scope="col">Select</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">1</td>
+                                                    <td>Individual Project Part A</td>
+                                                    <td>15</td>
+                                                    <td>100</td>
+                                                    <td>On this PART A, you are required to build a command prompt
+                                                        (console) application.</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control" name="subDateTime"
+                                                                value="2020-05-05" readonly />
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="radio" name="addRadio" value="1"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">2</td>
+                                                    <td>Individual Project Part B</td>
+                                                    <td>20</td>
+                                                    <td>100</td>
+                                                    <td>Following PART A you need to Make the schema of a database that
+                                                        can keep data for the main entities of the assignment and name
+                                                        the tables as: Students, Trainers, Assignments, Courses</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control" name="subDateTime"
+                                                                value="2020-09-10" readonly />
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="radio" name="addRadio" value="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">3</td>
+                                                    <td>Team Project</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                    <td>During the development of this project you need to do the
+                                                        implementation of a private school structure.</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control" name="subDateTime"
+                                                                value="2020-06-15" readonly />
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="radio" name="addRadio" value="3"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div>
+                                            <form>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"> <i>Personal Oral Mark:
+                                                            </i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control" id="pOralMark"
+                                                        name="pOralMark" min="0" max="20" placeholder="Enter Oral Mark"
+                                                        required />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"> <i>Personal Total Mark:
+                                                            </i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control" id="pTotalMark"
+                                                        name="pTotalMark" min="0" max="100"
+                                                        placeholder="Enter Total Mark" required />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-primary">Save
+                                            changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mini-box">
+
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target="#editModalLong" id="edit">Edit</button>
+                        <div class="modal fade" id="editModalLong" tabindex="-1" role="dialog"
+                            aria-labelledby="editModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLongTitle">List of available Assignments.
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-striped" id="editTable">
+                                            <thead>
+
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Oral Mark</th>
+                                                    <th scope="col">Total Mark</th>
+                                                    <th scope="col">Subbmission Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">1</td>
+                                                    <td>Individual Project Part B</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="10" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="80" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-11-20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">2</td>
+                                                    <td>Team Project</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="15" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="98" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-10-20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">3</td>
+                                                    <td>Individual Project Part A</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="12" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="78" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-04-10</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-primary">Save
+                                            changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mini-box">
+                        <button type="button" class="btn btn-info  mb-1" data-toggle="modal"
+                            data-target="#updateModalLong" id="update"
+                            onclick="selectCourseFromRadioAndAddToFinalTable();">Update</button>
+                        <div class="modal fade" id="updateModalLong" tabindex="-1" role="dialog"
+                            aria-labelledby="updateModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="updateModalLongTitle">List of available Assignments.
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-striped" id="updateTable">
+                                            <thead>
+
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Oral Mark</th>
+                                                    <th scope="col">Total Mark</th>
+                                                    <th scope="col">Subbmission Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">1</td>
+                                                    <td>Individual Project Part B</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="10" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="80" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-11-20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">2</td>
+                                                    <td>Team Project</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="15" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="98" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-10-20</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">3</td>
+                                                    <td>Individual Project Part A</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pOralMark"
+                                                                min="0" max="20" value="12" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/20</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" name="pTotalMark"
+                                                                min="0" max="100" value="78" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">/100</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>2020-04-10</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" data-dismiss="modal" class="btn btn-primary">Save
+                                            changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <nav class="navbar navbar-dark bg-dark p-2 rounded">
+            <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="brand icon" /> &copy; <i>Copyright PeopleCode</i></a>
+
+        </nav>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

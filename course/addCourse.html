@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleCode</title>
+    <link rel="icon" href="/images/logo.png" sizes="32x32">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top rounded mt-3"
+            style="box-shadow: 10px 8px 9px 0px rgb(39, 41, 46);">
+            <div class="mx-auto order-0">
+                <a href="/index.html" class="navbar-brand mx-auto">
+                    <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+                    <b><i>PeopleCode</i></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"
+                    aria-label="toggle here" aria-expanded="false" aria-controls="#navbar1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a href="#Course" class="nav-link dropdown-toggle" id="dropdownCourse"
+                            data-toggle="dropdown">Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/course/addCourse.html" class="dropdown-item active">Add Course</a>
+                            <a href="/course/editCourse.html" class="dropdown-item">Edit Course</a>
+                            <a href="/course/updateCourse.html" class="dropdown-item">Update Course</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Trainer" class="nav-link dropdown-toggle" id="dropdownTrainer"
+                            data-toggle="dropdown">Trainer</a>
+                        <div class="dropdown-menu">
+                            <a href="/trainer/addTrainer.html" class="dropdown-item">Add Trainer</a>
+                            <a href="/trainer/editTrainer.html" class="dropdown-item">Edit Trainer</a>
+                            <a href="/trainer/updateTrainer.html" class="dropdown-item">Update Trainer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Student" class="nav-link dropdown-toggle" id="dropdownStudent"
+                            data-toggle="dropdown">Student</a>
+                        <div class="dropdown-menu">
+                            <a href="/student/addStudent.html" class="dropdown-item">Add Student</a>
+                            <a href="/student/editStudent.html" class="dropdown-item">Edit Student</a>
+                            <a href="/student/updateStudent.html" class="dropdown-item">Update Student</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#Assignment" class="nav-link dropdown-toggle" id="dropdownAssignment"
+                            data-toggle="dropdown">Assignment</a>
+                        <div class="dropdown-menu">
+                            <a href="/assignment/addAssignment.html" class="dropdown-item">Add Assignment</a>
+                            <a href="/assignment/editAssignment.html" class="dropdown-item">Edit Assignment</a>
+                            <a href="/assignment/updateAssignment.html" class="dropdown-item">Update Assignment</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#PerCourse" class="nav-link dropdown-toggle" id="dropdownPerCourse"
+                            data-toggle="dropdown">Per Course</a>
+                        <div class="dropdown-menu">
+                            <a href="/perCourse/StudentsPerCourse.html" class="dropdown-item">Students Per
+                                Course</a>
+                            <a href="/perCourse/TrainersPerCourse.html" class="dropdown-item">Trainers Per Course</a>
+                            <a href="/perCourse/AssignmentsPerCourse.html" class="dropdown-item">Assignments Per
+                                Course</a>
+                            <a href="/perCourse/assignmentsPerStudentPerCourse.html"
+                                class="dropdown-item">Assignments Per Student Per Course</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <form>
+                        <div class="input-group mt-1 ml-auto">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-dark">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <div class="row my-3">
+            <div class="col-5 d-none d-lg-block">
+                <div class="big-box">
+                    <img class="rounded" src="/images/course.jpg" width="500" height="300" alt="puppy">
+                </div>
+            </div>
+            <div class="col-12 bg-light col-lg-6 offset-lg-1 pt-2">
+                <form>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <h3 class="display-5 text-center"> <i>Please fill the form to create a Course</i></h3>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Title: </i>&emsp;&nbsp;</span>
+                                </div>
+
+                                <input type="text" class="form-control" name="courseTitle" id="courseTitle"
+                                    pattern="CB.+" title="Must start with CB" placeholder="Enter Title" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Stream: </i></span>
+                                </div>
+                                <input type="text" class="form-control" id="courseStream" name="courseStream"
+                                    pattern="Java\C#" title="Can be either Java, or C#" placeholder=" Stream"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text border-right"> <i>Type:</i>&emsp;&nbsp;</span>
+                                </div>
+
+                                <div class="form-control">
+                                    &emsp;&emsp;&emsp;
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for="inlineRadio1">Full-time: </label>
+                                        <input class="form-check-input" type="radio" name="type" id="Full-time"
+                                            value="Full-time">
+                                    </div>
+                                    &ensp;
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for="inlineRadio2">Part-time: </label>
+                                        <input class="form-check-input" type="radio" name="type" id="Part-time"
+                                            value="Part-time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>Start Date: </i></span>
+                                </div>
+
+                                <input type="date" class="form-control" id="startDate" name="startDate" min="2020-05-19"
+                                    title="future dates only" required />
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i>End Date: </i></span>
+                                </div>
+                                <input type="date" class="form-control" id="endDate" name="endDate" min="startDate"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mini-box">
+                            <button type="submit" class="btn btn-lg btn-block btn-primary mb-1"
+                                 id="submit" onclick="checkCourseInputsAndAddToTable();">Submit</button>
+                        </div>
+                        <div class="col mini-box">
+                            <button type="reset" class="btn btn-lg btn-block btn-primary mb-1">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-3 bg-light">
+            <h3 class="display-5 text-center"><i>Here are all the available Courses: </i></h3>
+        </div>
+        <div class="row mt-1">
+
+            <table class="table table-striped" id="coursesTable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Stream</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">1</td>
+                        <td>CB10</td>
+                        <td>Java</td>
+                        <td>Part-time</td>
+                        <td>2020-02-17</td>
+                        <td>2020-09-15</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td>CB10</td>
+                        <td>C#</td>
+                        <td>Full-time</td>
+                        <td>2020-02-22</td>
+                        <td>2020-05-17</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">3</td>
+                        <td>CB9</td>
+                        <td>Java</td>
+                        <td>Part-time</td>
+                        <td>2019-10-11</td>
+                        <td>2020-05-04</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <nav class="navbar navbar-dark bg-dark p-2 rounded">
+            <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="brand icon" /> &copy; <i>Copyright PeopleCode</i></a>
+
+        </nav>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

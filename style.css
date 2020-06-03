@@ -1,0 +1,8 @@
+
+.bgimage{
+    background: url(/images/jumbotron.jpg);
+    background-repeat: no-repeat;
+    
+    background-size: 100%;
+}
+.input-group i::after{ content:"*"; color: red; }
